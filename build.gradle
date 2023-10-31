@@ -1,0 +1,33 @@
+plugins {
+    id 'idea'
+    id 'java'
+    id 'application'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'application'
+
+    repositories {
+        mavenCentral()
+    }
+
+    configurations.configureEach {
+        resolutionStrategy.eachDependency {
+            if (it.requested.group == 'io.aeron') {
+                it.useVersion aeronVersion
+            }
+            if (it.requested.group == 'org.apache.logging.log4j') {
+                it.useVersion log4jVersion
+            }
+        }
+    }
+
+    application {
+        applicationDefaultJvmArgs = ["--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED"]
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+}

@@ -1,10 +1,2 @@
-*/target/**
-*/target/*
-.classpath
-.project
-.settings/
-*/.idea/**
-target/
-.idea/**
-*/.idea/**
-.idea/*
+build/
+**/.idea/**

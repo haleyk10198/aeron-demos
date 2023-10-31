@@ -51,7 +51,7 @@ public class Main {
 
         //Step 6: Start the runners
         AgentRunner.startOnThread(sendAgentRunner);
-        
+
         long startTime = System.currentTimeMillis();
         AgentRunner.startOnThread(receiveAgentRunner);
 

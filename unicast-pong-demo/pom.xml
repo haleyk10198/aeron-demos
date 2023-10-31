@@ -21,13 +21,13 @@
         <dependency>
             <groupId>io.aeron</groupId>
             <artifactId>aeron-all</artifactId>
-            <version>1.40.0</version>
+            <version>1.41.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.aeron</groupId>
             <artifactId>aeron-all</artifactId>
-            <version>1.40.0</version>
+            <version>1.41.3</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
