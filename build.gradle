@@ -24,7 +24,8 @@ subprojects {
     }
 
     application {
-        applicationDefaultJvmArgs = ["--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED"]
+        applicationDefaultJvmArgs = ["--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED",
+                                     '-XX:+UnlockExperimentalVMOptions', '-XX:+UseEpsilonGC']
     }
 }
 
