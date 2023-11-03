@@ -24,11 +24,15 @@ subprojects {
     }
 
     application {
+        mainClass = "org.example.Main"
         applicationDefaultJvmArgs = ["--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED",
-                                     '-XX:+UnlockExperimentalVMOptions', '-XX:+UseEpsilonGC']
+//                                     '-XX:+UnlockExperimentalVMOptions', '-XX:+UseEpsilonGC',
+                                     "-Xmx256m", "-Xms256m", "-XX:+AlwaysPreTouch"]
     }
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }

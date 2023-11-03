@@ -11,10 +11,12 @@ import org.agrona.concurrent.IdleStrategy;
 import org.agrona.concurrent.ShutdownSignalBarrier;
 
 public class Main {
+
+    static final String channel = "aeron:ipc";
+    static final int streamId = 10;
+    static final int sendCount = 10;
+
     public static void main(String[] args) {
-        final String channel = "aeron:ipc";
-        final int streamId = 10;
-        final int sendCount = 1_000_000;
         final IdleStrategy idleStrategySend = new BusySpinIdleStrategy();
         final IdleStrategy idleStrategyReceive = new BusySpinIdleStrategy();
         final ShutdownSignalBarrier barrier = new ShutdownSignalBarrier();
